@@ -11,57 +11,41 @@ sunmap e
 
 let g:loaded_matchit = 1
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/bundle')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plug 'tpope/vim-sensible'
+Plug 'altercation/vim-colors-solarized'
+Plug 'justinmk/vim-dirvish'
+Plug 'scrooloose/nerdcommenter'
+Plug 'godlygeek/tabular'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'camelcasemotion'
+Plug 'a.vim'
+Plug 'rking/ag.vim'
+Plug 'valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'SirVer/UltiSnips'
 
-Plugin 'tpope/vim-sensible'
-" Plugin 'scrooloose/nerdtree'
-Plugin 'justinmk/vim-dirvish'
-Plugin 'scrooloose/nerdcommenter'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-function'
+Plug 'kana/vim-textobj-line'
+Plug 'sgur/vim-textobj-parameter'
 
-" Plugin 'guyon/TabBar'
-" Plugin 'rbgrouleff/bclose.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'wincent/command-t', { 'do': 'cd ruby/command-t && ruby extconf.rb && make' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
-Plugin 'altercation/vim-colors-solarized'
-" Plugin 'majutsushi/tagbar.git'
-" Plugin 'milkypostman/vim-togglelist'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'godlygeek/tabular'
-" Plugin 'tpope/vim-fugitive'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-" Plugin 'scrooloose/syntastic'
-Plugin 'camelcasemotion'
-Plugin 'a.vim'
-Plugin 'rking/ag.vim'
-" Plugin 'justinmk/vim-sneak'
-Plugin 'valloric/YouCompleteMe'
-Plugin 'SirVer/UltiSnips'
-" Plugin 'JazzCore/ctrlp-cmatcher'
-Plugin 'wincent/command-t'
+Plug 'elricbk/vim-cpp-organize-includes'
+Plug 'elricbk/vim-cpp-fix-includes'
 
-Plugin 'kana/vim-textobj-user'
-Plugin 'kana/vim-textobj-function'
-Plugin 'kana/vim-textobj-line'
-Plugin 'sgur/vim-textobj-parameter'
+Plug 'pangloss/vim-javascript'
+Plug 'FooSoft/vim-argwrap'
+Plug 'tpope/vim-surround'
 
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
+call plug#end()
 
-Plugin 'elricbk/vim-cpp-organize-includes'
-Plugin 'elricbk/vim-cpp-fix-includes'
-
-Plugin 'pangloss/vim-javascript'
-Plugin 'FooSoft/vim-argwrap'
-Plugin 'tpope/vim-surround'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+filetype plugin indent on
 
 set hidden
 
@@ -211,3 +195,4 @@ nnoremap <Space><Space> :e %:p:h<CR>
 if filereadable(expand("~/.vimrc_local"))
     source ~/.vimrc_local
 endif
+

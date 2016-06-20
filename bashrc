@@ -3,7 +3,6 @@ alias ll='ls -la'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 HISTSIZE=2000
 HISTFILESIZE=20000
@@ -47,3 +46,5 @@ for file in ~/.{exports,aliases,functions,bashrc_local}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
