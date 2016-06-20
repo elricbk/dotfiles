@@ -1,0 +1,13 @@
+set hlsearch
+set nu
+set ignorecase
+set smartcase
+
+nnoremap c> *Nciw
+nnoremap c< #Nciw
+nnoremap <C-l> :noh<CR>
+
+nnoremap ,r :run<CR>
+
+cnoremap <C-j> <CR>
+inoremap <C-j> <CR>

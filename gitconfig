@@ -1,0 +1,20 @@
+[include]
+    path = ~/.gitconfig_local
+
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+
+[core]
+	editor = /Applications/MacVim.app/Contents/MacOS/Vim
+
+[diff]
+    tool = mvimdiff
+
+[difftool "mvimdiff"]
+    cmd = /Applications/MacVim.app/Contents/MacOS/Vim -f -d \"$LOCAL\" \"$REMOTE\"
+
+[difftool]
+	prompt = false

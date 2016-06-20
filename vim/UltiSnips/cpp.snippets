@@ -1,0 +1,162 @@
+snippet inc "#include local header (inc)"
+#include "${1:`!p snip.rv = snip.basename + '.h'`}"
+endsnippet
+
+snippet Inc "#include <> (Inc)"
+#include <${1:.h}>
+endsnippet
+
+snippet main "main() (main)"
+int main()
+{
+	${VISUAL}${0}
+	return 0;
+}
+endsnippet
+
+snippet s "std::string" w
+std::string $0
+endsnippet
+
+snippet crs "const std::string& " w
+const std::string& $0
+endsnippet
+
+snippet cra "const a& " w
+const auto& $0
+endsnippet
+
+snippet up "std::unique_ptr<>" w
+std::unique_ptr<$1> $0
+endsnippet
+
+snippet sp "std::shared_ptr<>" w
+std::shared_ptr<$1> $0
+endsnippet
+
+snippet crV "const std::vector& " w
+const std::vector<${1:T}>& $2
+endsnippet
+
+snippet V "vector" w
+std::vector<${1:T}> $2
+endsnippet
+
+snippet Vs "vector of strings" w
+std::vector<std::string> $0
+endsnippet
+
+snippet Vi "vector of int" w
+std::vector<int> $0
+endsnippet
+
+snippet Mss "map" w
+std::map<std::string, std::string> $0
+endsnippet
+
+snippet UMsi "map" w
+std::unordered_map<std::string, int> $0
+endsnippet
+
+snippet fix "fixme" b
+// FIXME(bkuchin): $0
+endsnippet
+
+snippet hack "hack" b
+// HACK(bkuchin): $0
+endsnippet
+
+snippet o<< "operator <<()" b
+inline
+std::ostream& operator<<(std::ostream& os, const $1& ${2:item})
+{
+	$3
+	return os;
+}
+endsnippet
+
+snippet o== "operator ==()" b
+static
+bool operator==(const $1& lhs, const $1& rhs)
+{
+	$2
+}
+endsnippet
+
+snippet ca "const auto" w
+const auto $0
+endsnippet
+
+snippet ns "namespace" w
+namespace $0
+endsnippet
+
+snippet nsa "anonymous namespace" w
+namespace {
+
+${VISUAL}$0
+
+} // namespace
+endsnippet
+
+snippet fori "Description" b
+for (size_t i = 0; i < ${1:size}; ++i) {
+	$2
+}
+endsnippet
+
+snippet feca "for (const auto& item" b
+for (const auto& ${1:item} : ${2:container}) {
+	$3
+}
+endsnippet
+
+snippet ts "BOOST_AUTO_TEST_SUITE" b
+BOOST_AUTO_TEST_SUITE($1)
+
+$2
+
+BOOST_AUTO_TEST_SUITE_END()
+endsnippet
+
+snippet tsf "BOOST_FIXTURE_TEST_SUITE" b
+BOOST_FIXTURE_TEST_SUITE($1)
+
+$2
+
+BOOST_AUTO_TEST_SUITE_END()
+endsnippet
+
+snippet tc "BOOST_AUTO_TEST_SUITE" b
+BOOST_AUTO_TEST_CASE($1)
+{
+}
+endsnippet
+
+snippet ld "logging debug" w
+MAPS_DEBUG() << $1
+endsnippet
+
+snippet li "logging info" w
+MAPS_INFO() << $1
+endsnippet
+
+snippet lw "logging warn" w
+MAPS_WARN() << $1
+endsnippet
+
+snippet le "logging error" w
+MAPS_ERROR() << $1
+endsnippet
+
+snippet lv "log value" w
+"$1=" << $1 << $2
+endsnippet
+
+snippet lsv "log string value (with quotes)" w
+"$1='" << $1 << "'"$2
+endsnippet
+
+snippet un "using namespace" b
+using namespace $0
+endsnippet

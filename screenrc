@@ -1,0 +1,17 @@
+# Включаем строку статуса с "табами" для разных окон
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{=r kw} %-w%{= dg} [%n%f* %t] %{-}%+w %= %H @ %c "
+
+# Выключаем мигание и звук
+vbell off
+
+# Это очищает экран после выхода из vim, etc.
+altscreen on
+
+# Переключаемся по Ctrl + Space вместо Ctrl + a
+escape ^`a
+
+# Количество строк в буфере
+defscrollback 10000
+termcapinfo xterm* ti@:te@
