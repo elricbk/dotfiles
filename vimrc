@@ -49,7 +49,7 @@ filetype plugin indent on
 
 set hidden
 
-set ts=4 sw=4 et ai ci nu
+set ts=4 sw=4 et ai ci nu rnu
 
 syntax on
 
