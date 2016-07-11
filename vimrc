@@ -43,6 +43,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'FooSoft/vim-argwrap'
 Plug 'tpope/vim-surround'
 
+Plug 'AndrewRadev/sideways.vim'
+
 call plug#end()
 
 filetype plugin indent on
@@ -191,6 +193,11 @@ nnoremap c< #Ncgn
 
 " Open folder of current file
 nnoremap <Space><Space> :e %:p:h<CR>
+
+" Working with arguments
+nnoremap <Leader>aw :<C-U>ArgWrap<CR>
+nnoremap <Leader>ar :<C-U>SidewaysRight<CR>
+nnoremap <Leader>al :<C-U>SidewaysLeft<CR>
 
 if filereadable(expand("~/.vimrc_local"))
     source ~/.vimrc_local
