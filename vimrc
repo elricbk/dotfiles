@@ -79,7 +79,6 @@ colorscheme solarized
 
 " map <Leader>n :NERDTreeToggle<CR>
 " map <Leader>t :TagbarToggle<CR>
-noremap <Leader>f :CtrlPMRU<CR>
 noremap <Leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 noremap <Leader>gi :YcmCompleter GoToInclude<CR>
 noremap <Leader>gt :YcmCompleter GetType<CR>
