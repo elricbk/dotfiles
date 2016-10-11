@@ -46,5 +46,5 @@ function fe() { find . -name "*.$@"; }
 function cal() {
     local red="$(tput setaf 1)";
     local res="$(tput sgr0)";
-    gcal --starting-day=1 -H yes -q RU $(date +%Y) | sed -e "/^S[ua]/s/\033\[m\017//g" -e "s/^S[au].*$/$red&$res/";
+    gcal --starting-day=1 -H yes -q RU $(date +%Y) | sed -E "/^S[ua]/s/"$'\E'"\[0m/$res$red/g" | sed "s/^S[au].*$/$red&$res/";
 }
