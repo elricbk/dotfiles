@@ -41,3 +41,6 @@ function tre() {
 # Simple wrappers around `find`
 function fn() { find . -name "*$@*"; }
 function fe() { find . -name "*.$@"; }
+
+# Better calendar
+function cal() { gcal --starting-day=1 -H yes -q RU $(date +%Y) | sed -e 's/^\(S[au].*\)$/\x1B[31m\1\x1B[0m/'; }
