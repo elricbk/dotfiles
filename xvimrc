@@ -3,11 +3,16 @@ set nu
 set ignorecase
 set smartcase
 
+set ts=4
+set sw=4
+set et
+
 nnoremap c> *Nciw
 nnoremap c< #Nciw
 nnoremap <C-l> :noh<CR>
 
 nnoremap ,r :run<CR>
+nnoremap ,t :xccmd openQuickly<CR>
 
 cnoremap <C-j> <CR>
 inoremap <C-j> <CR>
