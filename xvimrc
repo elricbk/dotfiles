@@ -13,6 +13,8 @@ nnoremap <C-l> :noh<CR>
 
 nnoremap ,r :run<CR>
 nnoremap ,t :xccmd openQuickly<CR>
+nnoremap ,c<Space> :xccmd commentAndUncommentCurrentLines<CR>
+vnoremap ,c<Space> :xccmd commentAndUncommentCurrentLines<CR>
 
 cnoremap <C-j> <CR>
 inoremap <C-j> <CR>
