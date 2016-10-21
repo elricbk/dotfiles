@@ -1,5 +1,6 @@
 set hlsearch
 set nu
+set relativenumber
 set ignorecase
 set smartcase
 
