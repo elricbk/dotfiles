@@ -8,6 +8,10 @@ set ts=4
 set sw=4
 set et
 
+" Let's use 'screen lines' instead of actual ones
+nnoremap j gj
+nnoremap k gk
+
 nnoremap c> *Nciw
 nnoremap c< #Nciw
 nnoremap <C-l> :noh<CR>
