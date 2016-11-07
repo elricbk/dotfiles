@@ -1,3 +1,6 @@
+# Выключаем стартовый баннер
+startup_message off
+
 # Включаем строку статуса с "табами" для разных окон
 hardstatus on
 hardstatus alwayslastline
