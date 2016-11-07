@@ -18,3 +18,12 @@
 
 [difftool]
 	prompt = false
+
+[merge]
+	tool = mvimdiff
+
+[mergetool "mvimdiff"]
+    cmd = /Applications/MacVim.app/Contents/MacOS/Vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+
+[mergetool]
+    prompt = false
