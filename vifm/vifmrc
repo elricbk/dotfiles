@@ -425,5 +425,11 @@ set syscalls
 set fillchars+=vborder:││
 set tuioptions-=ps
 
+" Control + J acts as enter in commandline
 cnoremap <C-j> <CR>
+
+" Just to be in line with vim
 command qa :q
+
+" Better viewcolumns
+set viewcolumns=-{name}..,6{fileext},10{size},14.12{mtime}
