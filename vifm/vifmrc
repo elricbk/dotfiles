@@ -1,4 +1,4 @@
-" vim: filetype=vifm :
+" vim: filetype=vim :
 " Sample configuration file for vifm (last updated: 24 Oct, 2014)
 " You can edit this file by hand.
 " The " character at the beginning of a line comments out the line.
@@ -433,3 +433,29 @@ command qa :q
 
 " Better viewcolumns
 set viewcolumns=-{name}..,6{fileext},10{size},14.12{mtime}
+
+" With patched font
+" file types
+set classify='  :dir:/,  :exe:,  :reg:,  :link:'
+" various file names
+set classify+='  ::..::,  ::*.sh::,  ::*.[hc]pp::,  ::*.[hc]::,  ::/^copying|license$/::,  ::.git,,*.git::,  ::*.epub,,*.fb2,,*.djvu::,  ::*.pdf::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::'
+" archives
+set classify+='  ::*.7z,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,*.jar,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar,,*.taz,,*.tb2,,*.tbz,,*.tbz2,,*.tgz,,*.tlz,,*.trz,,*.txz,,*.tz,,*.tz2,,*.xz,,*.z,,*.zip,,*.zoo::'
+" images
+set classify+='  ::*.bmp,,*.gif,,*.jpeg,,*.jpg,,*.ico,,*.png,,*.ppm,,*.svg,,*.svgz,,*.tga,,*.tif,,*.tiff,,*.xbm,,*.xcf,,*.xpm,,*.xspf,,*.xwd::'
+" office files
+set classify+='  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*.ppt::'
+" android packages
+set classify+='  ::*.apk::'
+" databases
+set classify+='  ::*.sqlite::'
+" audio
+set classify+='  ::*.mp3,,*.ogg,,*.wav::'
+" video
+set classify+='  ::*.mp4,,*.mkv,,*.avi::'
+" text files
+set classify+='  ::*.txt::'
+" ssh connections
+set classify+='  ::*.ssh::'
+" fonts
+set classify+='  ::*.ttf::'
