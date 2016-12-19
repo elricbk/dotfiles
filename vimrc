@@ -42,6 +42,9 @@ Plug 'elricbk/vim-cpp-fix-includes'
 Plug 'pangloss/vim-javascript'
 Plug 'FooSoft/vim-argwrap'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+
+Plug 'keith/swift.vim'
 
 Plug 'AndrewRadev/sideways.vim'
 
