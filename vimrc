@@ -13,14 +13,18 @@ let g:loaded_matchit = 1
 
 call plug#begin('~/.vim/bundle')
 
+Plug 'camelcasemotion'
+
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+
 Plug 'altercation/vim-colors-solarized'
 Plug 'justinmk/vim-dirvish'
-Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'camelcasemotion'
 Plug 'a.vim'
 Plug 'rking/ag.vim'
 Plug 'valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
@@ -39,12 +43,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'elricbk/vim-cpp-organize-includes'
 Plug 'elricbk/vim-cpp-fix-includes'
 
-Plug 'pangloss/vim-javascript'
+Plug 'sheerun/vim-polyglot'
 Plug 'FooSoft/vim-argwrap'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-
-Plug 'keith/swift.vim'
 
 Plug 'AndrewRadev/sideways.vim'
 
