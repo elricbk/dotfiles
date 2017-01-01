@@ -19,6 +19,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-unimpaired'
 
 Plug 'altercation/vim-colors-solarized'
 Plug 'justinmk/vim-dirvish'
