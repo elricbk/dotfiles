@@ -136,6 +136,34 @@ endfunction
 
 noremap <Leader>ev y:call ExtractVariable()<cr>
 
+" Helper function to transform C/C++ enums to operator<<
+function! OstreamizeEnumFunction()
+    " Drop empty lines
+    silent! g/^\s*$/d
+    " Save enum name to 'a' register
+    silent! normal gg
+    silent! s/\venum\s+(class\s+)?(\w+)/\=setreg('a', submatch(2))/n
+    " Drop first and last lines
+    silent! 0d
+    silent! $d
+    " Drop spaces and commas
+    silent! %s/\v\s+|,//g
+    " Prepend each enum value with enum name
+    silent! %s/\ze\w\+/\=@a . '::'/
+    " Transform it to std::map initializer list value
+    silent! %s/\v\w+::(\w+)/{&, "\1"},/
+    " Prepend function header
+    silent! 0s/^/inline<CR>std::ostream\& operator<<(std::ostream\& os, ENUM_CLASS_NAME value)<CR>{<CR>const static std::map<ENUM_CLASS_NAME, std::string> VALUES = {<CR>/
+    " Append function footer
+    silent! $s/$/<CR>};<CR>return os << (VALUES.count(value) ? VALUES.at(value) : "UNKNOWN");<CR>}/
+    " Replace placeholder values with enum name
+    silent! %s/ENUM_CLASS_NAME/\=@a/g
+    " Format the result
+    silent! normal gg=G
+endfunction
+
+command! OstreamizeEnum call OstreamizeEnumFunction()
+
 " More convenient paste
 noremap <Leader>p :set paste!<CR>
 
