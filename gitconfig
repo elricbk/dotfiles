@@ -8,13 +8,13 @@
     co = checkout
 
 [core]
-	editor = /Applications/MacVim.app/Contents/MacOS/Vim
+	editor = $EDITOR
 
 [diff]
     tool = mvimdiff
 
 [difftool "mvimdiff"]
-    cmd = /Applications/MacVim.app/Contents/MacOS/Vim -f -d \"$LOCAL\" \"$REMOTE\"
+    cmd = $EDITOR -f -d \"$LOCAL\" \"$REMOTE\"
 
 [difftool]
 	prompt = false
@@ -23,7 +23,7 @@
 	tool = mvimdiff
 
 [mergetool "mvimdiff"]
-    cmd = /Applications/MacVim.app/Contents/MacOS/Vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+    cmd = $EDITOR -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 
 [mergetool]
     prompt = false
