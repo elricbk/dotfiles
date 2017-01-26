@@ -38,7 +38,7 @@ Plug 'kana/vim-textobj-line'
 Plug 'sgur/vim-textobj-parameter'
 
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'wincent/command-t', { 'do': 'cd ruby/command-t && ruby extconf.rb && make' }
+" Plug 'wincent/command-t', { 'do': 'cd ruby/command-t && ruby extconf.rb && make' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -138,6 +138,8 @@ noremap <Leader>ev y:call ExtractVariable()<cr>
 
 " Helper function to transform C/C++ enums to operator<<
 function! OstreamizeEnumFunction()
+    let header = "inline<CR>std::ostream& operator << (std::ostream& os, ENUM_CLASS_NAME value)<CR>{<CR>const static std::map<ENUM_CLASS_NAME, std::string> VALUES = {<CR>"
+    let footer = "<CR>};<CR>return os << (VALUES.count(value) ? VALUES.at(value) : "UNKNOWN");<CR>}"
     " Drop empty lines
     silent! g/^\s*$/d
     " Save enum name to 'a' register
@@ -153,11 +155,12 @@ function! OstreamizeEnumFunction()
     " Transform it to std::map initializer list value
     silent! %s/\v\w+::(\w+)/{&, "\1"},/
     " Prepend function header
-    silent! 0s/^/inline<CR>std::ostream\& operator<<(std::ostream\& os, ENUM_CLASS_NAME value)<CR>{<CR>const static std::map<ENUM_CLASS_NAME, std::string> VALUES = {<CR>/
+    silent! 0s/^/\=header/
     " Append function footer
-    silent! $s/$/<CR>};<CR>return os << (VALUES.count(value) ? VALUES.at(value) : "UNKNOWN");<CR>}/
+    silent! $s/$/\=footer/
     " Replace placeholder values with enum name
     silent! %s/ENUM_CLASS_NAME/\=@a/g
+    silent! %s/<CR>//g
     " Format the result
     silent! normal gg=G
 endfunction
@@ -191,13 +194,13 @@ let g:ctrlp_by_filename = 1
 cabbr <expr> %% expand('%:p:h')
 
 " Command-t options
-let g:CommandTCancelMap = ['<ESC>', '<C-c>']
-let g:CommandTBackspaceMap = ['<BS>', '<C-h>']
-let g:CommandTCursorLeftMap = ['']
-let g:CommandTMaxCachedDirectories = 0
-let g:CommandTMaxFiles = 200000
-let g:CommandTTagIncludeFilenames = 1
-let g:CommandTCursorColor = 'StatusLine'
+" let g:CommandTCancelMap = ['<ESC>', '<C-c>']
+" let g:CommandTBackspaceMap = ['<BS>', '<C-h>']
+" let g:CommandTCursorLeftMap = ['']
+" let g:CommandTMaxCachedDirectories = 0
+" let g:CommandTMaxFiles = 200000
+" let g:CommandTTagIncludeFilenames = 1
+" let g:CommandTCursorColor = 'StatusLine'
 
 " Using Ctrl-A emacs-like in command line
 cnoremap <C-A> <Home>
@@ -210,11 +213,13 @@ cnoremap <C-n> <Down>
 au BufNewFile,BufRead *.gradle setf groovy
 
 " Better handling of CPP extensions in a.vim
-let g:alternateExtensions_H = "cpp,c"
-let g:alternateExtensions_CPP = "inc,h,H,HPP,hpp"
+let g:alternateExtensions_h = "cpp,c"
+let g:alternateExtensions_cpp = "inc,h,H,HPP,hpp"
 
 " Prefix for fzf commands
 let g:fzf_command_prefix = 'Fzf'
+let g:fzf_layout = { 'down': '~15' }
+nnoremap <Leader>t :<C-u>FzfFiles<CR>
 
 " More sane default split policy
 set splitright
@@ -229,7 +234,7 @@ nnoremap c> *Ncgn
 nnoremap c< #Ncgn
 
 " Open folder of current file
-nnoremap <Space><Space> :e %:p:h<CR>
+" nnoremap <Space><Space> :e %:p:h<CR>
 
 " Working with arguments
 nnoremap <Leader>aw :<C-U>ArgWrap<CR>
