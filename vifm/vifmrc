@@ -409,10 +409,6 @@ nnoremap <f8> :delete<cr>
 
 " Various customization examples
 
-" Use ag (the silver searcher) instead of grep
-"
-" set grepprg=ag\ --line-numbers\ %i\ %a\ %s
-
 " Add additional place to look for executables
 "
 " let $PATH=$HOME.'/bin/fuse:'.$PATH
@@ -420,6 +416,9 @@ nnoremap <f8> :delete<cr>
 " Block particular shortcut
 "
 " nnoremap <left> <nop>
+
+" Use ag (the silver searcher) instead of grep
+set grepprg=ag\ --line-numbers\ %i\ %a\ %s
 
 set syscalls
 set fillchars+=vborder:││
@@ -430,6 +429,9 @@ cnoremap <C-j> <CR>
 
 " Just to be in line with vim
 command qa :q
+
+" Utility for ejecting disks
+:nnoremap ,e :!!diskutil eject %c<CR>
 
 " Better viewcolumns
 set viewcolumns=-{name}..,6{fileext},10{size},14.12{mtime}
