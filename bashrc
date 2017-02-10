@@ -2,8 +2,8 @@ export PS1='\u:\w\$ '
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-HISTSIZE=2000
-HISTFILESIZE=20000
+HISTSIZE=100000
+HISTFILESIZE=100000
 HISTCONTROL=ignoredups:erasedups
 shopt -s histappend
 PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
