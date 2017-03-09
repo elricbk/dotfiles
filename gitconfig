@@ -9,6 +9,12 @@
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
+[log]
+    date = short
+
+[format]
+    pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(20)%aN%Cred%d %Creset%s
+
 [core]
 	editor = $EDITOR
 
