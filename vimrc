@@ -51,6 +51,8 @@ Plug 'FooSoft/vim-argwrap'
 
 Plug 'AndrewRadev/sideways.vim'
 
+Plug 'haya14busa/vim-asterisk'
+
 call plug#end()
 
 filetype plugin indent on
@@ -222,6 +224,13 @@ nnoremap c< #Ncgn
 nnoremap <Leader>aw :<C-U>ArgWrap<CR>
 nnoremap <Leader>ar :<C-U>SidewaysRight<CR>
 nnoremap <Leader>al :<C-U>SidewaysLeft<CR>
+
+" Trying `vim-asterisk` mappings
+map *  <Plug>(asterisk-z*)
+map #  <Plug>(asterisk-z#)
+map g* <Plug>(asterisk-gz*)
+map g# <Plug>(asterisk-gz#)
+let g:asterisk#keeppos = 1
 
 if filereadable(expand("~/.vimrc_local"))
     source ~/.vimrc_local
