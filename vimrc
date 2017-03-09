@@ -38,7 +38,6 @@ Plug 'kana/vim-textobj-line'
 Plug 'sgur/vim-textobj-parameter'
 
 Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'wincent/command-t', { 'do': 'cd ruby/command-t && ruby extconf.rb && make' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/Vader.vim'
@@ -74,18 +73,9 @@ set cot-=preview
 let mapleader=","
 nnoremap \ ,
 
-" Switch to next/previous buffer. Makes sense only with TabBar plugin
-" map <C-S-J> :bn<CR>
-" map <C-S-K> :bp<CR>
-
 set background=light
 colorscheme solarized
 
-" Max size for TabBar plugin
-" let g:Tb_MaxSize=0
-
-" map <Leader>n :NERDTreeToggle<CR>
-" map <Leader>t :TagbarToggle<CR>
 noremap <Leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 noremap <Leader>gi :YcmCompleter GoToInclude<CR>
 noremap <Leader>gt :YcmCompleter GetType<CR>
@@ -197,15 +187,6 @@ let g:ctrlp_by_filename = 1
 " Simple expanding of path of open file
 cabbr <expr> %% expand('%:p:h')
 
-" Command-t options
-" let g:CommandTCancelMap = ['<ESC>', '<C-c>']
-" let g:CommandTBackspaceMap = ['<BS>', '<C-h>']
-" let g:CommandTCursorLeftMap = ['']
-" let g:CommandTMaxCachedDirectories = 0
-" let g:CommandTMaxFiles = 200000
-" let g:CommandTTagIncludeFilenames = 1
-" let g:CommandTCursorColor = 'StatusLine'
-
 " Using Ctrl-A emacs-like in command line
 cnoremap <C-A> <Home>
 
@@ -236,9 +217,6 @@ inoremap {<C-j> {<CR>}<Esc>O
 " Supercharged dot formula for words replacing
 nnoremap c> *Ncgn
 nnoremap c< #Ncgn
-
-" Open folder of current file
-" nnoremap <Space><Space> :e %:p:h<CR>
 
 " Working with arguments
 nnoremap <Leader>aw :<C-U>ArgWrap<CR>
