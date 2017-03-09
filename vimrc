@@ -41,9 +41,11 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'wincent/command-t', { 'do': 'cd ruby/command-t && ruby extconf.rb && make' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/Vader.vim'
 
 Plug 'elricbk/vim-cpp-organize-includes'
 Plug 'elricbk/vim-cpp-fix-includes'
+Plug 'elricbk/vim-yawiki'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'FooSoft/vim-argwrap'
@@ -117,20 +119,22 @@ let g:airline_powerline_fonts = 1
 " Add helper function to extract variables in C++/Python
 function! ExtractVariable()
     let name = inputdialog("Extracted variable name: ")
-    if name != ""
-        " Restore visual selection and replace it with variable name
-        execute "normal gvc" . name
-        " Add line before current, paste variable name and equals sign
-        if (&ft == 'cpp')
-            execute "normal O" . "auto " . name . " = "
-        else
-            execute "normal O" . name . " = "
-        endif
-        " Paste actual variable value
-        normal p
-        if (&ft == 'cpp')
-            execute "normal A" . ";"
-        endif
+    if name ==? ""
+        return
+    endif
+
+    " Restore visual selection and replace it with variable name
+    execute "normal! gvc" . name
+    " Add line before current, paste variable name and equals sign
+    if &ft == 'cpp'
+        execute "normal! O" . "const auto " . name . " = "
+    else
+        execute "normal! O" . name . " = "
+    endif
+    " Paste actual variable value
+    normal p
+    if &ft == 'cpp'
+        execute "normal! A;"
     endif
 endfunction
 
