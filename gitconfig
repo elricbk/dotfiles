@@ -13,7 +13,7 @@
     date = short
 
 [format]
-    pretty = format:%C(yellow)%h %Cblue%>(10)%ad %Cgreen%<(20)%aN%Cred%d %Creset%s
+    pretty = format:%C(yellow)%h %C(blue)%>(10)%ad %C(green)%<(20)%aN%C(reset)%C(auto)%d %s
 
 [core]
 	editor = $EDITOR
