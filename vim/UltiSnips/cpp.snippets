@@ -62,6 +62,10 @@ snippet UMsi "map" w
 std::unordered_map<std::string, int> $0
 endsnippet
 
+snippet USs "unordered_set<string>" w
+std::unordered_set<std::string> $0
+endsnippet
+
 snippet fix "fixme" b
 // FIXME(bkuchin): $0
 endsnippet
@@ -175,4 +179,8 @@ endsnippet
 
 snippet SP "std::shared_ptr" w
 std::shared_ptr<${0:${VISUAL}}>
+endsnippet
+
+snippet sc "std::shared_ptr" w
+static_cast<$0>(${VISUAL})
 endsnippet
