@@ -163,6 +163,25 @@ endfunction
 
 command! OstreamizeEnum call OstreamizeEnumFunction()
 
+" Helper function to allow easier URL reading
+" Works on buffer as whole
+function! s:UrlSplit()
+    substitute /?/?/e
+    % substitute /&//ge
+    % substitute /%2C/,/ge
+    % substitute /%3D/=/ge
+    % substitute /%3B/;/ge
+    silent! /=
+    if g:tabular_loaded
+        silent! Tabularize /=
+    endif
+    match Function /^\w\+/
+    2match String /\s\+=\s\zs.*$/
+    3match Comment /=/
+endfunction
+
+command! UrlSplit :call <SID>UrlSplit()
+
 " More convenient paste
 noremap <Leader>p :set paste!<CR>
 
