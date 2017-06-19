@@ -35,7 +35,6 @@ Plug 'SirVer/UltiSnips'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-function'
 Plug 'kana/vim-textobj-line'
-Plug 'sgur/vim-textobj-parameter'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -50,6 +49,11 @@ Plug 'sheerun/vim-polyglot'
 Plug 'FooSoft/vim-argwrap'
 
 Plug 'AndrewRadev/sideways.vim'
+" Add 'argument' text object
+omap aa <Plug>SidewaysArgumentTextobjA
+xmap aa <Plug>SidewaysArgumentTextobjA
+omap ia <Plug>SidewaysArgumentTextobjI
+xmap ia <Plug>SidewaysArgumentTextobjI
 
 Plug 'haya14busa/vim-asterisk'
 
