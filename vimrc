@@ -172,14 +172,14 @@ command! OstreamizeEnum call OstreamizeEnumFunction()
 function! s:UrlSplit()
     substitute /?/?/e
     % substitute /&//ge
-    % substitute /%2C/,/ge
-    % substitute /%3D/=/ge
-    % substitute /%3B/;/ge
     silent! /=
-    if g:tabular_loaded
+    if exists("g:tabular_loaded")
         silent! Tabularize /=
     endif
-    match Function /^\w\+/
+    silent! % substitute /%2C/,/ge
+    silent! % substitute /%3D/=/ge
+    silent! % substitute /%3B/;/ge
+    match Function /^\S\+\ze\s/
     2match String /\s\+=\s\zs.*$/
     3match Comment /=/
 endfunction
