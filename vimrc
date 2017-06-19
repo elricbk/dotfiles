@@ -139,7 +139,7 @@ noremap <Leader>ev y:call ExtractVariable()<cr>
 " Helper function to transform C/C++ enums to operator<<
 function! OstreamizeEnumFunction()
     let header = "inline<CR>std::ostream& operator << (std::ostream& os, ENUM_CLASS_NAME value)<CR>{<CR>const static std::map<ENUM_CLASS_NAME, std::string> VALUES = {<CR>"
-    let footer = "<CR>};<CR>return os << (VALUES.count(value) ? VALUES.at(value) : "UNKNOWN");<CR>}"
+    let footer = "<CR>};<CR>return os << (VALUES.count(value) ? VALUES.at(value) : \"UNKNOWN\");<CR>}"
     " Drop empty lines
     silent! g/^\s*$/d
     " Save enum name to 'a' register
