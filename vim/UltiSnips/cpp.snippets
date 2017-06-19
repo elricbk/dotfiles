@@ -181,6 +181,14 @@ snippet SP "std::shared_ptr" w
 std::shared_ptr<${0:${VISUAL}}>
 endsnippet
 
-snippet sc "std::shared_ptr" w
+snippet sc "static_cast" w
 static_cast<$0>(${VISUAL})
+endsnippet
+
+snippet dc "dynamic_cast" w
+dynamic_cast<$0>(${VISUAL})
+endsnippet
+
+snippet cb "const bool" w
+const bool $0
 endsnippet
