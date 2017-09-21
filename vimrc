@@ -57,6 +57,8 @@ xmap ia <Plug>SidewaysArgumentTextobjI
 
 Plug 'haya14busa/vim-asterisk'
 
+Plug 'zchee/vim-flatbuffers'
+
 call plug#end()
 
 filetype plugin indent on

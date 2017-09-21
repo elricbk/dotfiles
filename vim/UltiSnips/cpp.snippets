@@ -46,6 +46,10 @@ snippet V "vector" w
 std::vector<${1:T}> $2
 endsnippet
 
+snippet S "set" w
+std::set<${1:T}> $2
+endsnippet
+
 snippet Vs "vector of strings" w
 std::vector<std::string> $0
 endsnippet
@@ -170,7 +174,7 @@ using namespace $0
 endsnippet
 
 snippet z "size_t" w
-size_t
+size_t 
 endsnippet
 
 snippet UP "std::unique_ptr" w
@@ -191,4 +195,28 @@ endsnippet
 
 snippet cb "const bool" w
 const bool $0
+endsnippet
+
+snippet cr? "const boost::optional<>&" w
+const boost::optional<$1>& $0
+endsnippet
+
+snippet ? "boost::optional" w
+boost::optional<$1> $0
+endsnippet
+
+snippet cs "const std::string" w
+const std::string $0
+endsnippet
+
+snippet ifc "if (...) { continue; }" b
+if ($0) { continue; }
+endsnippet
+
+snippet ifr "if (...) { return; }" b
+if ($0) { return; }
+endsnippet
+
+snippet once "#pragma once" b
+#pragma once
 endsnippet
