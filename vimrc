@@ -13,7 +13,7 @@ let g:loaded_matchit = 1
 
 call plug#begin('~/.vim/bundle')
 
-Plug 'camelcasemotion'
+Plug 'vim-scripts/camelcasemotion'
 
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -27,7 +27,7 @@ Plug 'justinmk/vim-dirvish'
 Plug 'godlygeek/tabular'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'a.vim'
+Plug 'vim-scripts/a.vim'
 Plug 'rking/ag.vim'
 Plug 'valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'SirVer/UltiSnips'
