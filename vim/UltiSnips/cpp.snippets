@@ -30,14 +30,6 @@ snippet cra "const a& " w
 const auto& $0
 endsnippet
 
-snippet up "std::unique_ptr<>" w
-std::unique_ptr<$1> $0
-endsnippet
-
-snippet sp "std::shared_ptr<>" w
-std::shared_ptr<$1> $0
-endsnippet
-
 snippet crV "const std::vector& " w
 const std::vector<${1:T}>& $2
 endsnippet
@@ -219,4 +211,20 @@ endsnippet
 
 snippet once "#pragma once" b
 #pragma once
+endsnippet
+
+snippet cpc "const char*" w
+const char* $0
+endsnippet
+
+snippet V8 "" w
+std::vector<uint8_t>
+endsnippet
+
+snippet V16 "" w
+std::vector<uint16_t>
+endsnippet
+
+snippet V32 "" w
+std::vector<uint32_t>
 endsnippet
