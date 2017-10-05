@@ -24,6 +24,7 @@ Plug 'tpope/vim-abolish'
 
 Plug 'altercation/vim-colors-solarized'
 Plug 'justinmk/vim-dirvish'
+let g:dirvish_mode=':sort ,^.*/,'
 Plug 'godlygeek/tabular'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
