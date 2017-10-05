@@ -57,8 +57,8 @@ omap ia <Plug>SidewaysArgumentTextobjI
 xmap ia <Plug>SidewaysArgumentTextobjI
 
 Plug 'haya14busa/vim-asterisk'
-
 Plug 'zchee/vim-flatbuffers'
+Plug 'jszakmeister/vim-togglecursor'
 
 call plug#end()
 
