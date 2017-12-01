@@ -1,8 +1,14 @@
-alias tis='tig status'
-alias ll='ls -la'
 if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]
 then
     alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 fi
+
+if [ -x "$(command -v gls)" ]
+then
+    alias ls='gls --color -h --group-directories-first'
+fi
+
+alias tis='tig status'
+alias ll='ls -la'
 
 # vim: ft=sh
