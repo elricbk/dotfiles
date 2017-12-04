@@ -37,7 +37,6 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-function'
 Plug 'kana/vim-textobj-line'
 
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/Vader.vim'
@@ -202,15 +201,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-m>"
 
 " Fixing some CtrlP issues
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.a,*.o,*.d,*.pyc,*/genfiles/*,genfiles/*,*/git_mobflow_msg*
-" let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
-" For now we only need MRU functionality from CtrlP
-let g:ctrlp_types = ['mru']
-let g:ctrlp_mruf_default_order = 1
-let g:ctrlp_root_markers=['.ctrlp']
-let g:ctrlp_max_files = 0
-let g:ctrlp_map = '<Leader>f'
-let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_by_filename = 1
 
 " Simple expanding of path of open file
 cabbr <expr> %% expand('%:p:h')
@@ -233,6 +223,7 @@ let g:alternateExtensions_cpp = "inc,h,H,HPP,hpp"
 let g:fzf_command_prefix = 'Fzf'
 let g:fzf_layout = { 'down': '~15' }
 nnoremap <Leader>t :<C-u>FzfFiles<CR>
+nnoremap <Leader>f :<C-u>FzfHistory<CR>
 
 " More sane default split policy
 set splitright
