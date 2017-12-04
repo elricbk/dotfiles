@@ -37,4 +37,11 @@ export LESS="-RFX"
 export CLICOLOR=1
 export CLICOLOR_FORCE=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-eval `gdircolors ~/.dir_colors`
+
+if [ -x "$(command -v gdircolors)" ]; then
+    eval `gdircolors ~/.dir_colors`
+fi
+
+if [ -x "$(command -v dircolors)" ]; then
+    eval `dircolors ~/.dir_colors`
+fi
