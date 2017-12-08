@@ -249,6 +249,13 @@ map g* <Plug>(asterisk-gz*)
 map g# <Plug>(asterisk-gz#)
 let g:asterisk#keeppos = 1
 
+" Add better grepping if 'rg' is available
+if executable('rg')
+    set grepprg=rg\ --vimgrep\ --smart-case
+    nnoremap <expr> K ':grep! "\b' . expand('<cword>') . '\b"<CR>:botright cwindow<CR>'
+    command! -nargs=+ -complete=file -bar Grep silent! grep! <args>|cwindow|redraw!
+endif
+
 if filereadable(expand("~/.vimrc_local"))
     source ~/.vimrc_local
 endif
