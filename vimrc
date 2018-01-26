@@ -239,6 +239,7 @@ nnoremap c< #Ncgn
 
 " Working with arguments
 nnoremap <Leader>aw :<C-U>ArgWrap<CR>
+nnoremap <Leader>af :<C-U>ArgWrap<CR>%kJ>ib
 nnoremap <Leader>ar :<C-U>SidewaysRight<CR>
 nnoremap <Leader>al :<C-U>SidewaysLeft<CR>
 
