@@ -12,6 +12,7 @@
     - echo '[ -f ~/.exports ] && source ~/.exports' >> ~/.bashrc
     - echo '[ -f ~/.functions ] && source ~/.functions' >> ~/.bashrc
     - echo '[ -f ~/.aliases ] && source ~/.aliases' >> ~/.bashrc
+    - echo '[ -f ~/.bashrc_local ] && source ~/.bashrc_local' >> ~/.bashrc
     - mkdir -p ~/.vim/backup
     - mkdir -p ~/.vim/swap
     - mkdir -p ~/.vim/undo
