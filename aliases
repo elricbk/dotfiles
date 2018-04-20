@@ -1,14 +1,15 @@
-if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]
-then
+if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
     alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 fi
 
-if [ -x "$(command -v gls)" ]
-then
+if [ -x "$(command -v gls)" ]; then
     alias ls='gls --color -h --group-directories-first'
+elif [ "$OSTYPE" == linux-gnu ]; then
+    alias ls='ls --color -h --group-directories-first'
 fi
 
 alias tis='tig status'
 alias ll='ls -la'
+alias fix-ssh-agent-fwd='SSH_AUTH_SOCK="$(find $(ls -ldt /tmp/ssh-* | fgrep $USER | head -1 | perl -npae '"'"'$_=$F[$#F]'"'"') -type s | head -1)"'
 
 # vim: ft=sh
