@@ -44,6 +44,7 @@ Plug 'junegunn/Vader.vim'
 Plug 'elricbk/vim-cpp-organize-includes'
 Plug 'elricbk/vim-cpp-fix-includes'
 Plug 'elricbk/vim-yawiki'
+Plug 'elricbk/vim-requester'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'FooSoft/vim-argwrap'
@@ -95,16 +96,16 @@ let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#auto_vim_configuration = 0
 
 " Let's use 'screen lines' instead of actual ones
-nnoremap j gj
-nnoremap k gk
+noremap <expr> j (v:count? 'j' : 'gj')
+noremap <expr> k (v:count? 'k' : 'gk')
 
 " Allow running commands in cyrillic layout
 set langmap=йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;qwertyuiop[]asdfghjkl;'zxcvbnm\\,.QWERTYUIOP{}ASDFGHJKL:\"ZXCVBNM<>
 
 " More support for cyrillic
 cabbrev ц w
-nnoremap о gj
-nnoremap л gk
+noremap <expr> о (v:count? 'j' : 'gj')
+noremap <expr> л (v:count? 'k' : 'gk')
 
 " Move .swp files to a single folder
 set directory=~/.vim/swap//
@@ -123,17 +124,21 @@ function! ExtractVariable()
 
     " Restore visual selection and replace it with variable name
     execute "normal! gvc" . name
-    " Add line before current, paste variable name and equals sign
+
+    let prefix = ''
+    let suffix = ''
     if &ft == 'cpp'
-        execute "normal! O" . "const auto " . name . " = "
-    else
-        execute "normal! O" . name . " = "
+        let prefix = "const auto "
+        let suffix = ";"
+    elseif &ft == 'vim'
+        let prefix = "let "
     endif
+
+    " Add line before current, paste variable name and equals sign
+    execute "normal! O" . prefix . name . " = "
     " Paste actual variable value
     normal p
-    if &ft == 'cpp'
-        execute "normal! A;"
-    endif
+    execute "normal! A" . suffix
 endfunction
 
 noremap <Leader>ev y:call ExtractVariable()<cr>
@@ -169,25 +174,6 @@ endfunction
 
 command! OstreamizeEnum call OstreamizeEnumFunction()
 
-" Helper function to allow easier URL reading
-" Works on buffer as whole
-function! s:UrlSplit()
-    substitute /?/?/e
-    % substitute /&//ge
-    silent! /=
-    if exists("g:tabular_loaded")
-        silent! Tabularize /=
-    endif
-    silent! % substitute /%2C/,/ge
-    silent! % substitute /%3D/=/ge
-    silent! % substitute /%3B/;/ge
-    match Function /^\S\+\ze\s/
-    2match String /\s\+=\s\zs.*$/
-    3match Comment /=/
-endfunction
-
-command! UrlSplit :call <SID>UrlSplit()
-
 " More convenient paste
 noremap <Leader>p :set paste!<CR>
 
@@ -199,7 +185,7 @@ let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-k>"
 let g:UltiSnipsJumpBackwardTrigger="<c-m>"
 
-" Fixing some CtrlP issues
+" Better wildignore
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.a,*.o,*.d,*.pyc,*/genfiles/*,genfiles/*,*/git_mobflow_msg*
 
 " Simple expanding of path of open file
@@ -225,6 +211,10 @@ let g:fzf_layout = { 'down': '~15' }
 nnoremap <Leader>t :<C-u>FzfFiles<CR>
 nnoremap <Leader>f :<C-u>FzfHistory<CR>
 
+" This seem to at least partially fix relative numbers slowdown in
+" iTerm2/tmux/vim combo
+set lazyredraw
+
 " More sane default split policy
 set splitright
 set splitbelow
@@ -239,6 +229,7 @@ nnoremap c< #Ncgn
 
 " Working with arguments
 nnoremap <Leader>aw :<C-U>ArgWrap<CR>
+nnoremap <Leader>af :<C-U>ArgWrap<CR>%kJ>ib
 nnoremap <Leader>ar :<C-U>SidewaysRight<CR>
 nnoremap <Leader>al :<C-U>SidewaysLeft<CR>
 
