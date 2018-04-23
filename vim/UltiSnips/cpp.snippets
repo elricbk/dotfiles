@@ -232,3 +232,15 @@ endsnippet
 snippet V32 "" w
 std::vector<uint32_t>
 endsnippet
+
+snippet \ "basic lambda function" i
+[] (const auto& it) { return $0; }
+endsnippet
+
+snippet \= "copy lambda function" i
+[=] (const auto& it) { return $0; }
+endsnippet
+
+snippet \& "capture lambda function" i
+[&] (const auto& it) { return $0; }
+endsnippet
