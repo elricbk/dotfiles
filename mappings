@@ -1,0 +1,8 @@
+bind '"\er": redraw-current-line'
+bind '"\C-g\C-f": "$(git-fzf-gf)\e\C-e\er"'
+bind '"\C-g\C-b": "$(git-fzf-gb)\e\C-e\er"'
+bind '"\C-g\C-t": "$(git-fzf-gt)\e\C-e\er"'
+bind '"\C-g\C-h": "$(git-fzf-gh)\e\C-e\er"'
+bind '"\C-g\C-r": "$(git-fzf-gr)\e\C-e\er"'
+
+# vim: ft=sh

@@ -8,7 +8,7 @@ HISTCONTROL=ignoredups:erasedups
 shopt -s histappend
 PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 
-for file in ~/.{exports,aliases,functions,bashrc_local}; do
+for file in ~/.{exports,aliases,functions,mappings,bashrc_local}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;

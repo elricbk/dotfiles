@@ -3,6 +3,7 @@
     ~/.aliases: aliases
     ~/.functions: functions
     ~/.exports: exports
+    ~/.mappings: mappings
     ~/.screenrc: screenrc
     ~/.tmux.conf: tmux.conf
     ~/.dir_colors: dir_colors
@@ -12,6 +13,7 @@
     - echo '[ -f ~/.exports ] && source ~/.exports' >> ~/.bashrc
     - echo '[ -f ~/.functions ] && source ~/.functions' >> ~/.bashrc
     - echo '[ -f ~/.aliases ] && source ~/.aliases' >> ~/.bashrc
+    - echo '[ -f ~/.mappings ] && source ~/.mappings' >> ~/.bashrc
     - echo '[ -f ~/.bashrc_local ] && source ~/.bashrc_local' >> ~/.bashrc
     - mkdir -p ~/.vim/backup
     - mkdir -p ~/.vim/swap
