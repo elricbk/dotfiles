@@ -113,12 +113,25 @@ Plug 'junegunn/Vader.vim'
 call plug#end()
 
 filetype plugin indent on
+syntax on
 
 set hidden
 
-set ts=4 sw=4 et ai ci nu rnu
+" Indentation settings
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set cindent
+" No indent inside namespaces
+set cinoptions=N-s
 
-syntax on
+" Numbers column
+set number
+set relativenumber
+" This seem to at least partially fix relative numbers slowdown in
+" iTerm2/tmux/vim combo
+set lazyredraw
 
 " Search options
 set hlsearch
@@ -126,8 +139,8 @@ set ignorecase
 set smartcase
 
 " Completion options
-set cot+=longest
-set cot-=preview
+set completeopt+=longest
+set completeopt-=preview
 
 set background=light
 colorscheme solarized
@@ -136,10 +149,9 @@ colorscheme solarized
 noremap <expr> j (v:count ? 'j' : 'gj')
 noremap <expr> k (v:count ? 'k' : 'gk')
 
+" Cyrillic support
 " Allow running commands in cyrillic layout
 set langmap=йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;qwertyuiop[]asdfghjkl;'zxcvbnm\\,.QWERTYUIOP{}ASDFGHJKL:\"ZXCVBNM<>
-
-" More support for cyrillic
 cabbrev ц w
 noremap <expr> о (v:count ? 'j' : 'gj')
 noremap <expr> л (v:count ? 'k' : 'gk')
@@ -150,13 +162,17 @@ set backupdir=~/.vim/backup//
 set undodir=~/.vim/undo//
 
 " Allowing to select text which was just pasted
-nmap gV `[v`]
+noremap gV `[v`]
 
 " Better wildignore
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.a,*.o,*.d,*.pyc,*/genfiles/*,genfiles/*,*/git_mobflow_msg*
 
+" More sane default split policy
+set splitright
+set splitbelow
+
 " Simple expanding of path of open file
-cabbr <expr> %% expand('%:p:h')
+cabbrev <expr> %% expand('%:p:h')
 
 " Using Ctrl-A emacs-like in command line
 cnoremap <C-A> <Home>
@@ -165,17 +181,8 @@ cnoremap <C-A> <Home>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
-" This seem to at least partially fix relative numbers slowdown in
-" iTerm2/tmux/vim combo
-set lazyredraw
-
-" More sane default split policy
-set splitright
-set splitbelow
-
-" Some autoexpansion of brackets
+" Autoexpansion of curly brackets
 inoremap {<CR> {<CR>}<Esc>O
-inoremap {<C-j> {<CR>}<Esc>O
 
 " Supercharged dot formula for words replacing
 nnoremap c> *Ncgn
