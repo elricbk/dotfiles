@@ -190,6 +190,13 @@ inoremap {<CR> {<CR>}<Esc>O
 nnoremap c> *Ncgn
 nnoremap c< #Ncgn
 
+" Mappings for working with system clipboard
+nnoremap <Leader>p "+p
+vnoremap <Leader>y "+y
+
+" Write buffers in less keystrokes
+nnoremap <Leader>w :<C-u>update<CR>
+
 " Add better grepping if 'rg' is available
 if executable('rg')
     set grepprg=rg\ --vimgrep\ --smart-case
