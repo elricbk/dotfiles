@@ -125,6 +125,8 @@ set autoindent
 set cindent
 " No indent inside namespaces
 set cinoptions=N-s
+set linebreak
+let &showbreak='↪ '
 
 " Numbers column
 set number
