@@ -57,7 +57,7 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 Plug 'tenfyzhong/CompleteParameter.vim'
-inoremap <silent><expr> ( complete_parameter#pre_complete("()")
+inoremap <silent><expr> ( complete_parameter#pre_complete("(")
 let g:complete_parameter_use_ultisnips_mapping = 1
 
 " Text objects plugins
