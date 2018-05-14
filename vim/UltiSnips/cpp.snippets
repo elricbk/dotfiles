@@ -131,9 +131,10 @@ $2
 BOOST_AUTO_TEST_SUITE_END()
 endsnippet
 
-snippet tc "BOOST_AUTO_TEST_SUITE" b
+snippet tc "BOOST_AUTO_TEST_CASE" b
 BOOST_AUTO_TEST_CASE($1)
 {
+	$2
 }
 endsnippet
 
@@ -244,3 +245,8 @@ endsnippet
 snippet \& "capture lambda function" i
 [&] (const auto& it) { return $0; }
 endsnippet
+
+snippet mv "std::move" w
+std::move(${VISUAL}$0)
+endsnippet
+
