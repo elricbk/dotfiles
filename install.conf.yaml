@@ -9,6 +9,8 @@
     ~/.dir_colors: dir_colors
     ~/.vimrc: vimrc
     ~/.gitconfig: gitconfig
+    ~/.ideavimrc: ideavimrc
+    ~/.scimrc: scimrc
 - shell:
     - echo '[ -f ~/.exports ] && source ~/.exports' >> ~/.bashrc
     - echo '[ -f ~/.functions ] && source ~/.functions' >> ~/.bashrc
