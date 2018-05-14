@@ -1,0 +1,5 @@
+color "type=WELCOME bold=0 standout=0 dim=0 reverse=0 underline=0 blink=0 fg=DEFAULT_COLOR bg=DEFAULT_COLOR"
+color "type=INPUT bold=0 standout=0 dim=0 reverse=0 underline=0 blink=0 fg=DEFAULT_COLOR bg=DEFAULT_COLOR"
+color "type=MODE bold=0 standout=0 dim=0 reverse=0 underline=0 blink=0 fg=DEFAULT_COLOR bg=DEFAULT_COLOR"
+color "type=HEADINGS bold=0 standout=0 dim=0 reverse=0 fg=DEFAULT_COLOR bg=WHITE"
+color "type=CELL_SELECTION bold=0 standout=0 dim=0 reverse=1 fg=DEFAULT_COLOR bg=WHITE"
