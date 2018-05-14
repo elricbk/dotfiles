@@ -192,10 +192,13 @@ nnoremap c< #Ncgn
 
 " Mappings for working with system clipboard
 nnoremap <Leader>p "+p
+nnoremap бз "+p
 vnoremap <Leader>y "+y
+vnoremap бн "+y
 
 " Write buffers in less keystrokes
 nnoremap <Leader>w :<C-u>update<CR>
+nnoremap бц :<C-u>update<CR>
 
 " Add better grepping if 'rg' is available
 if executable('rg')
