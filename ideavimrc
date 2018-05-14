@@ -7,6 +7,8 @@ nnoremap ,r :<C-u>action Run<CR>
 nnoremap ,f :<C-u>action RecentFiles<CR>
 nnoremap ,t :<C-u>action SearchEverywhere<CR>
 nnoremap c> *Nciw
+nnoremap [<Space> mvO<Esc>0D`v
+nnoremap ]<Space> mvo<Esc>0D`v
 nnoremap <C-l> :<C-u>nohlsearch<CR>
 nnoremap <C-6> :<C-u>action VimFilePrevious<CR>
 inoremap <C-j> <CR>
