@@ -72,6 +72,9 @@ let g:fzf_command_prefix = 'Fzf'
 let g:fzf_layout = { 'down': '~15' }
 nnoremap <Leader>t :<C-u>FzfFiles<CR>
 nnoremap <Leader>f :<C-u>FzfHistory<CR>
+if executable('fd')
+    let $FZF_DEFAULT_COMMAND='fd --type f'
+endif
 
 Plug 'FooSoft/vim-argwrap'
 " Wrapping argument lists in calls and functions
