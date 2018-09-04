@@ -8,6 +8,7 @@
     co = checkout
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    clog = log --format=%B -n 1
 
 [log]
     date = short
