@@ -72,7 +72,9 @@ let g:fzf_command_prefix = 'Fzf'
 let g:fzf_layout = { 'down': '~15' }
 nnoremap <Leader>t :<C-u>FzfFiles<CR>
 nnoremap <Leader>f :<C-u>FzfHistory<CR>
-if executable('fd')
+if executable('rg')
+    let $FZF_DEFAULT_COMMAND='rg --files'
+elseif executable('fd')
     let $FZF_DEFAULT_COMMAND='fd --type f'
 endif
 
@@ -109,6 +111,7 @@ Plug 'godlygeek/tabular'
 Plug 'elricbk/vim-cpp-organize-includes'
 Plug 'elricbk/vim-cpp-fix-includes'
 Plug 'elricbk/vim-requester'
+let g:vim_requester_auto_filetype = 1
 
 " Writing tests for plugins
 Plug 'junegunn/Vader.vim'
