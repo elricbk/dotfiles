@@ -11,6 +11,8 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+xmap Ы <Plug>VSurround
+let g:surround_no_insert_mappings = 1
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
