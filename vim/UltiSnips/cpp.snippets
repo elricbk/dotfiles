@@ -178,6 +178,18 @@ snippet SP "std::shared_ptr" w
 std::shared_ptr<${0:${VISUAL}}>
 endsnippet
 
+snippet MS "std::make_shared" w
+std::make_shared<${0:${VISUAL}}>
+endsnippet
+
+snippet MU "std::make_unique" w
+std::make_unique<${0:${VISUAL}}>
+endsnippet
+
+snippet M? "boost::make_optional" w
+boost::make_optional<${0:${VISUAL}}>
+endsnippet
+
 snippet crSP "const std::shared_ptr<>?" w
 const std::shared_ptr<${0:${VISUAL}}>&
 endsnippet
