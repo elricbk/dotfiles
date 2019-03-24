@@ -16,6 +16,8 @@ let g:surround_no_insert_mappings = 1
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
+nmap х<Space> <Plug>unimpairedBlankUp
+nmap ъ<Space> <Plug>unimpairedBlankDown
 Plug 'tpope/vim-abolish'
 
 Plug 'vim-scripts/camelcasemotion'
