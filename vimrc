@@ -41,6 +41,13 @@ Plug 'vim-scripts/a.vim'
 let g:alternateExtensions_h = "cpp,c"
 let g:alternateExtensions_cpp = "inc,h,H,HPP,hpp"
 
+Plug 'SirVer/UltiSnips'
+" Remapping ultisnips to allow working with YCM
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsUsePythonVersion=2
+
 Plug 'valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 " YCM options
 let g:ycm_confirm_extra_conf = 0
@@ -53,12 +60,6 @@ noremap <Leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 noremap <Leader>gi :YcmCompleter GoToInclude<CR>
 noremap <Leader>gt :YcmCompleter GetType<CR>
 noremap <Leader>gx :YcmCompleter FixIt<CR>
-
-Plug 'SirVer/UltiSnips'
-" Remapping ultisnips to allow working with YCM
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 Plug 'tenfyzhong/CompleteParameter.vim'
 inoremap <silent><expr> ( complete_parameter#pre_complete("(")
