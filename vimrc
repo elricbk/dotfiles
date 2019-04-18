@@ -286,6 +286,12 @@ endfunction
 
 command! OstreamizeEnum call OstreamizeEnumFunction()
 
+function! OpSort(type, ...)
+    '[,']sort
+endfunction
+nmap <silent> <Leader>s :set opfunc=OpSort<CR>g@
+nmap <silent> бы :set opfunc=OpSort<CR>g@
+
 if filereadable(expand("~/.vimrc_local"))
     source ~/.vimrc_local
 endif
