@@ -117,6 +117,12 @@ Plug 'elricbk/vim-cpp-organize-includes'
 Plug 'elricbk/vim-cpp-fix-includes'
 Plug 'elricbk/vim-requester'
 let g:vim_requester_auto_filetype = 1
+augroup filetype_requester
+    autocmd!
+    autocmd FileType requester nmap <buffer> бк <Plug>(requester-do-request)
+    autocmd FileType requester nmap <buffer> бы <Plug>(requester-split-line)
+    autocmd FileType requester nmap <buffer> бо <Plug>(requester-join-line)
+augroup END
 
 " Writing tests for plugins
 Plug 'junegunn/Vader.vim'
