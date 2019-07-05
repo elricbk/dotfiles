@@ -1,4 +1,5 @@
 set nocompatible              " be iMproved, required
+set encoding=utf-8
 filetype off                  " required
 
 let g:loaded_matchit = 1
@@ -98,12 +99,22 @@ xmap ia <Plug>SidewaysArgumentTextobjI
 nnoremap <Leader>ar :<C-U>SidewaysRight<CR>
 nnoremap <Leader>al :<C-U>SidewaysLeft<CR>
 
+" Better asterisk (*) handling
 Plug 'haya14busa/vim-asterisk'
 map *  <Plug>(asterisk-z*)
 map #  <Plug>(asterisk-z#)
 map g* <Plug>(asterisk-gz*)
 map g# <Plug>(asterisk-gz#)
 let g:asterisk#keeppos = 1
+
+" Replace operator to R and exchange to X
+Plug 'romgrk/replace.vim'
+nmap R <Plug>ReplaceOperator
+vmap R <Plug>ReplaceOperator
+nmap X <Plug>ExchangeOperator
+nmap К <Plug>ReplaceOperator
+vmap К <Plug>ReplaceOperator
+nmap Ч <Plug>ExchangeOperator
 
 " Syntax plugins
 Plug 'sheerun/vim-polyglot'
