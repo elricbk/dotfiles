@@ -10,6 +10,6 @@ fi
 
 alias tis='tig status'
 alias ll='ls -la'
-alias fix-ssh-agent-fwd='SSH_AUTH_SOCK="$(find $(ls -ldt /tmp/ssh-* | fgrep $USER | head -1 | perl -npae '"'"'$_=$F[$#F]'"'"') -type s | head -1)"'
+alias fix-ssh-agent-fwd='SSH_AUTH_SOCK="$(find $(ls --color=none -ldt /tmp/ssh-* | fgrep $USER | head -1 | perl -npae '"'"'$_=$F[$#F]'"'"') -type s | head -1)"'
 
 # vim: ft=sh
