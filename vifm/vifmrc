@@ -428,7 +428,7 @@ set tuioptions-=ps
 cnoremap <C-j> <CR>
 
 " Just to be in line with vim
-command qa :q
+command! qa :q
 
 " Utility for ejecting disks
 :nnoremap ,e :!!diskutil eject %c<CR>
