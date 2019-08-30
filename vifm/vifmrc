@@ -260,7 +260,7 @@ fileviewer *.tar.txz,*.txz xz --list %c
 filetype *.rar
        \ {Mount with rar2fs}
        \ FUSE_MOUNT|rar2fs %SOURCE_FILE %DESTINATION_DIR,
-fileviewer *.rar unrar v %c
+fileviewer *.rar 7z l %c
 
 " IsoMount
 filetype *.iso
