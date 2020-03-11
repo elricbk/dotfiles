@@ -22,15 +22,15 @@ snippet s? "boost::optional<std::string>" w
 boost::optional<std::string> $0
 endsnippet
 
-snippet crs "const std::string& " w
+snippet rcs "const std::string& " w
 const std::string& $0
 endsnippet
 
-snippet cra "const a& " w
+snippet rca "const auto& " w
 const auto& $0
 endsnippet
 
-snippet crV "const std::vector& " w
+snippet rcV "const std::vector& " w
 const std::vector<${1:T}>& $2
 endsnippet
 
@@ -71,7 +71,7 @@ snippet hack "hack" b
 endsnippet
 
 snippet o<< "operator <<()" b
-inline
+static inline
 std::ostream& operator<<(std::ostream& os, const $1& ${2:item})
 {
 	$3
@@ -80,7 +80,7 @@ std::ostream& operator<<(std::ostream& os, const $1& ${2:item})
 endsnippet
 
 snippet o== "operator ==()" b
-static
+static inline
 bool operator==(const $1& lhs, const $1& rhs)
 {
 	$2
@@ -190,7 +190,7 @@ snippet M? "boost::make_optional" w
 boost::make_optional<${0:${VISUAL}}>
 endsnippet
 
-snippet crSP "const std::shared_ptr<>?" w
+snippet rcSP "const std::shared_ptr<>?" w
 const std::shared_ptr<${0:${VISUAL}}>&
 endsnippet
 
@@ -210,7 +210,7 @@ snippet cb "const bool" w
 const bool $0
 endsnippet
 
-snippet cr? "const boost::optional<>&" w
+snippet rc? "const boost::optional<>&" w
 const boost::optional<$1>& $0
 endsnippet
 
@@ -234,7 +234,7 @@ snippet once "#pragma once" b
 #pragma once
 endsnippet
 
-snippet cpc "const char*" w
+snippet pcc "const char*" w
 const char* $0
 endsnippet
 
@@ -251,15 +251,15 @@ std::vector<uint32_t>
 endsnippet
 
 snippet \ "basic lambda function" i
-[] (const auto& it) { return $0; }
+[] (auto&& it) { return $0; }
 endsnippet
 
 snippet \= "copy lambda function" i
-[=] (const auto& it) { return $0; }
+[=] (auto&& it) { return $0; }
 endsnippet
 
 snippet \& "capture lambda function" i
-[&] (const auto& it) { return $0; }
+[&] (auto&& it) { return $0; }
 endsnippet
 
 snippet mv "std::move" w
