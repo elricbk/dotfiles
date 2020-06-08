@@ -94,11 +94,11 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 # Example aliases
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
-for file in ~/.{exports,aliases,functions}; do
+for file in ~/.{exports,aliases,functions,zshrc_local}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$HOME/.local/bin:$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
