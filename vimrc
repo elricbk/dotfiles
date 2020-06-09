@@ -47,7 +47,6 @@ Plug 'SirVer/UltiSnips'
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsUsePythonVersion=2
 
 Plug 'valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 " YCM options
@@ -134,6 +133,10 @@ augroup filetype_requester
     autocmd FileType requester nmap <buffer> бы <Plug>(requester-split-line)
     autocmd FileType requester nmap <buffer> бо <Plug>(requester-join-line)
 augroup END
+
+if filereadable(expand("~/.vimrc_local_plugins"))
+    source ~/.vimrc_local_plugins
+endif
 
 " Writing tests for plugins
 Plug 'junegunn/Vader.vim'
