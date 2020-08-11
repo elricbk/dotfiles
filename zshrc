@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/bkuchin/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -45,7 +45,6 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew zsh-syntax-highlighting)
 
 # User configuration
 
@@ -92,7 +91,6 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
 for file in ~/.{exports,aliases,functions,zshrc_local}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
