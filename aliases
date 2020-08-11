@@ -4,7 +4,7 @@ fi
 
 if [ -x "$(command -v gls)" ]; then
     alias ls='gls --color -h --group-directories-first'
-elif [ "$OSTYPE" == linux-gnu ]; then
+elif [[ "$OSTYPE" == linux-gnu ]]; then
     alias ls='ls --color -h --group-directories-first'
 fi
 
