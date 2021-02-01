@@ -48,7 +48,7 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
-Plug 'valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'valloric/YouCompleteMe', { 'do': './install.py --clangd-completer' }
 " YCM options
 let g:ycm_confirm_extra_conf = 0
 let g:jedi#related_names_command = ""
@@ -123,8 +123,6 @@ Plug 'elricbk/vim-yawiki'
 " Misc stuff
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'godlygeek/tabular'
-Plug 'elricbk/vim-cpp-organize-includes'
-Plug 'elricbk/vim-cpp-fix-includes'
 Plug 'elricbk/vim-requester'
 let g:vim_requester_auto_filetype = 1
 augroup filetype_requester
@@ -153,7 +151,6 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
-set cindent
 " No indent inside namespaces
 set cinoptions=N-s
 set linebreak
@@ -162,6 +159,7 @@ let &showbreak='↪ '
 " Numbers column
 set number
 set relativenumber
+set signcolumn=number
 " This seem to at least partially fix relative numbers slowdown in
 " iTerm2/tmux/vim combo
 set lazyredraw
@@ -188,6 +186,7 @@ set langmap=йцукенгшщзхъфывапролджэячсмитьбюЙЦ
 cabbrev ц w
 noremap <expr> о (v:count ? 'j' : 'gj')
 noremap <expr> л (v:count ? 'k' : 'gk')
+let g:yawiki_cyrillic_prefix = 'б'
 
 " Move .swp files to a single folder
 set directory=~/.vim/swap//
