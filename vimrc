@@ -86,7 +86,7 @@ endif
 Plug 'FooSoft/vim-argwrap'
 " Wrapping argument lists in calls and functions
 nnoremap <Leader>aw :<C-U>ArgWrap<CR>
-nnoremap <Leader>af :<C-U>ArgWrap<CR>%kJ>ib
+nnoremap <Leader>af :<C-U>ArgWrap<CR>k%kJ>ib
 
 Plug 'AndrewRadev/sideways.vim'
 " Add 'argument' text object
