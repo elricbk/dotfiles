@@ -47,10 +47,11 @@ function fe() { find . -name "*.$@"; }
 #   * current day is highlighted
 #   * weekends are highlighted
 function cal() {
+    local year=$(date +%Y)
     local red="$(tput setaf 1)";
     local res="$(tput sgr0)";
     # `sed` expression is for Mac OS X' sed (maybe use gsed instead?)
-    gcal --starting-day=1 -H yes -q RU $(date +%Y) | sed -E "/^S[ua]/s/"$'\E'"\[0m/$res$red/g" | sed "s/^S[au].*$/$red&$res/";
+    gcal --starting-day=1 -H yes -q RU ${1:-$year} | sed -E "/^S[ua]/s/"$'\E'"\[0m/$res$red/g" | sed "s/^S[au].*$/$red&$res/";
 }
 
 # remove duplicates while preserving input order
