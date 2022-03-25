@@ -48,7 +48,7 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
-Plug 'valloric/YouCompleteMe', { 'do': './install.py --clangd-completer' }
+Plug 'valloric/YouCompleteMe', { 'do': './install.py --clangd-completer --ts-completer' }
 " YCM options
 let g:ycm_confirm_extra_conf = 0
 let g:jedi#related_names_command = ""
@@ -60,10 +60,6 @@ noremap <Leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 noremap <Leader>gi :YcmCompleter GoToInclude<CR>
 noremap <Leader>gt :YcmCompleter GetType<CR>
 noremap <Leader>gx :YcmCompleter FixIt<CR>
-
-Plug 'tenfyzhong/CompleteParameter.vim'
-inoremap <silent><expr> ( complete_parameter#pre_complete("(")
-let g:complete_parameter_use_ultisnips_mapping = 1
 
 " Text objects plugins
 Plug 'kana/vim-textobj-user'

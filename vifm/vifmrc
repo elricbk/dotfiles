@@ -100,7 +100,7 @@ set slowfs=curlftpfs
 
 " Set custom status line look
 
-set statusline="  %t%= %A %10u:%-7g %15s %20d  "
+" set statusline="  %t%= %A %10u:%-7g %15s %20d  "
 
 " ------------------------------------------------------------------------------
 
@@ -108,6 +108,7 @@ set statusline="  %t%= %A %10u:%-7g %15s %20d  "
 
 mark h ~/
 mark v /Volumes
+mark d ~/Downloads
 
 " ------------------------------------------------------------------------------
 
@@ -427,6 +428,9 @@ set tuioptions-=ps
 " Control + J acts as enter in commandline
 cnoremap <C-j> <CR>
 
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+
 " Just to be in line with vim
 command! qa :q
 
@@ -452,7 +456,7 @@ set classify+='  ::*.apk::'
 " databases
 set classify+='  ::*.sqlite::'
 " audio
-set classify+='  ::*.mp3,,*.ogg,,*.wav::'
+set classify+='  ::*.mp3,,*.ogg,,*.wav,,*.opus::'
 " video
 set classify+='  ::*.mp4,,*.mkv,,*.avi,,*.mpg::'
 " text files
@@ -460,4 +464,6 @@ set classify+='  ::*.txt::'
 " ssh connections
 set classify+='  ::*.ssh::'
 " fonts
-set classify+='  ::*.ttf::'
+set classify+='  ::*.ttf,,*.otf::'
+" 3-d printer stuff
+set classify+='  ::*.stl::'

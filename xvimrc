@@ -8,10 +8,6 @@ set ts=4
 set sw=4
 set et
 
-" Let's use 'screen lines' instead of actual ones
-nnoremap j gj
-nnoremap k gk
-
 nnoremap c> *Nciw
 nnoremap c< #Nciw
 nnoremap <C-l> :noh<CR>
@@ -21,5 +17,5 @@ nnoremap ,t :xccmd openQuickly<CR>
 nnoremap ,c<Space> :xcmenucmd Comment selection<CR>
 vnoremap ,c<Space> :xcmenucmd Comment selection<CR>
 
-cnoremap <C-j> <CR>
-inoremap <C-j> <CR>
+cnoremap <C-m> <CR>
+inoremap <C-m> <CR>

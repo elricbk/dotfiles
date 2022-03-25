@@ -2,6 +2,7 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
+set relativenumber
 
 nnoremap ,r :<C-u>action Run<CR>
 nnoremap ,f :<C-u>action RecentFiles<CR>
@@ -13,3 +14,10 @@ nnoremap <C-l> :<C-u>nohlsearch<CR>
 nnoremap <C-6> :<C-u>action VimFilePrevious<CR>
 inoremap <C-j> <CR>
 inoremap <C-h> <BS>
+
+" Moving arguments around
+nnoremap ,ar :<C-U>action MoveElementRight<CR>
+nnoremap ,al :<C-U>action MoveElementLeft<CR>
+
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'tpope/vim-commentary'
