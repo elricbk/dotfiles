@@ -148,7 +148,7 @@ set shiftwidth=4
 set expandtab
 set autoindent
 " No indent inside namespaces
-set cinoptions=N-s
+set cinoptions=N-sl1g0
 set linebreak
 let &showbreak='↪ '
 
