@@ -1,0 +1,8 @@
+add_newline = false
+format = """$directory$character"""
+right_format = """$all"""
+follow_symlinks = false
+
+[directory]
+truncation_length = 1
+fish_style_pwd_dir_length = 1

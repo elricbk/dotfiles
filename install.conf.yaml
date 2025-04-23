@@ -13,6 +13,7 @@
     ~/.scimrc: scimrc
     ~/.vifm: vifm
     ~/.alacritty.toml: alacritty.toml
+    ~/.config/starship.toml: starship.toml
 - shell:
     - echo '[ -f ~/.exports ] && source ~/.exports' >> ~/.bashrc
     - echo '[ -f ~/.functions ] && source ~/.functions' >> ~/.bashrc
