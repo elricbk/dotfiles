@@ -8,6 +8,31 @@ option_as_alt = "OnlyLeft"
 [selection]
 save_to_clipboard = true
 
+[[keyboard.bindings]]
+key = "м"
+mods = "Command"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "с"
+mods = "Command"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "т"
+mods = "Command"
+action = "SpawnNewInstance"
+
+[[keyboard.bindings]]
+key = "ц"
+mods = "Command"
+action = "Quit"
+
+[[keyboard.bindings]]
+key = "а"
+mods = "Command"
+action = "SearchForward"
+
 # Colors (Solarized Light)
 
 # Default colors
