@@ -315,7 +315,7 @@ fileviewer .*/,*/ tree %f
 " Or leave it for automatic detection
 "
 " fileviewer * pygmentize -O style=monokai -f console256 -g
-fileviewer * pygmentize -O style=monokai -g
+fileviewer * pygmentize -O style=solarized-light -g
 
 " Displaying pictures in terminal
 "
