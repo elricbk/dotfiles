@@ -93,11 +93,15 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 #
 # Example aliases
 
-for file in ~/.{exports,aliases,functions,zshrc_local}; do
+export PATH="$HOME/.local/bin:$PATH"
+[ -x /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
+for file in ~/.{exports,aliases,functions}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
 
-export PATH="$HOME/.local/bin:$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Make local overrides with highest priority
+[ -f ~/.zshrc_local ] && source ~/.zshrc_local
